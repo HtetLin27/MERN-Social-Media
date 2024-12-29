@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useRef } from "react";
+import { AppContext } from "./ThemedApp";
 
 function From({ add }) {
+  const { mode } = useContext(AppContext);
   const contentRef = useRef();
   const nameRef = useRef();
   return (
@@ -20,7 +22,7 @@ function From({ add }) {
         padding: 10,
         borderRadius: 8,
         marginBottom: 20,
-        background: "#def",
+        background: mode === "dark" ? "#555" : "#def",
       }}
     >
       <input
